@@ -11,7 +11,6 @@ interface ProjectCardProps {
   imageAlt: string
   infoRows: { label: string; value: string }[]
   techStack: string[]
-  href?: string
   className?: string
   style?: React.CSSProperties
 }
@@ -25,7 +24,6 @@ function ProjectCard({
   imageAlt,
   infoRows,
   techStack,
-  href = "#",
   className,
   style,
 }: ProjectCardProps) {
@@ -37,7 +35,6 @@ function ProjectCard({
         className
       )}
     >
-      {/* Header: category + status */}
       <div className="flex items-center justify-between px-6 pt-6">
         <span className="text-[11px] font-medium uppercase tracking-widest text-cream-foreground/50">
           {category}
@@ -47,14 +44,11 @@ function ProjectCard({
         </span>
       </div>
 
-      {/* Title */}
       <h3 className="mt-3 px-6 text-[28px] font-bold leading-tight tracking-[-0.02em] text-cream-foreground">
         {title}
       </h3>
 
-      {/* Preview area — browser mockup frame */}
       <div className="mx-6 mt-5 overflow-hidden rounded-xl border border-cream-foreground/8 transition-all duration-300 group-hover:border-cream-foreground/12">
-        {/* Browser chrome */}
         <div className="flex items-center gap-2 bg-cream-foreground/[0.04] px-3.5 py-2.5">
           <div className="flex items-center gap-1.5">
             <span className="size-[7px] rounded-full bg-cream-foreground/15" />
@@ -67,7 +61,6 @@ function ProjectCard({
             </span>
           </div>
         </div>
-        {/* Image */}
         <div className="relative aspect-[16/10] overflow-hidden bg-cream-foreground/[0.04]">
           <Image
             src={imageSrc}
@@ -76,12 +69,10 @@ function ProjectCard({
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-cream-foreground/[0.06] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </div>
       </div>
 
-      {/* Info rows */}
       <div className="mx-6 mt-5 flex flex-col">
         {infoRows.map((row, i) => (
           <div
@@ -101,12 +92,10 @@ function ProjectCard({
         ))}
       </div>
 
-      {/* Description */}
       <p className="mx-6 mt-4 text-sm leading-relaxed text-cream-foreground/60">
         {description}
       </p>
 
-      {/* Footer: tech stack + CTA */}
       <div className="mt-auto flex items-end justify-between px-6 pb-6 pt-5">
         <div className="flex flex-wrap gap-1.5">
           {techStack.map((tech) => (
@@ -118,13 +107,10 @@ function ProjectCard({
             </span>
           ))}
         </div>
-        <a
-          href={href}
-          className="group/btn inline-flex items-center gap-1.5 rounded-xl bg-cream-foreground px-4 py-2 text-xs font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-cream-foreground/90 hover:shadow-md"
-        >
+        <span className="group/btn inline-flex items-center gap-1.5 rounded-xl bg-cream-foreground px-4 py-2 text-xs font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-cream-foreground/90 hover:shadow-md">
           View
           <ArrowRight className="size-3 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-        </a>
+        </span>
       </div>
     </article>
   )

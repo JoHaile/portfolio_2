@@ -79,10 +79,9 @@ export default function ScrollTracker() {
 
   const handleClick = (href: string) => {
     const el = document.querySelector(href)
-    const currentLenis = useLenis()
-    if (el && currentLenis) {
+    if (el && lenis) {
       const y = el.getBoundingClientRect().top + window.scrollY
-      currentLenis.scrollTo(y, { offset: 0, duration: 1.6 })
+      lenis.scrollTo(y, { offset: 0, duration: 1.6 })
     }
   }
 

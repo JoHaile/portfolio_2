@@ -1,27 +1,29 @@
 "use client"
 
-import { useEffect, type ReactNode } from "react"
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
 import Lenis from "lenis"
 
-let lenisInstance: Lenis | null = null
+const LenisContext = createContext<Lenis | null>(null)
 
 function useLenis() {
-  return lenisInstance
+  return useContext(LenisContext)
 }
 
 function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const [lenis, setLenis] = useState<Lenis | null>(null)
+
   useEffect(() => {
-    const lenis = new Lenis({
+    const instance = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       touchMultiplier: 2,
     })
 
-    lenisInstance = lenis
+    setLenis(instance)
 
     let rafId = 0
     function raf(time: number) {
-      lenis.raf(time)
+      instance.raf(time)
       rafId = requestAnimationFrame(raf)
     }
 
@@ -29,12 +31,11 @@ function SmoothScrollProvider({ children }: { children: ReactNode }) {
 
     return () => {
       cancelAnimationFrame(rafId)
-      lenis.destroy()
-      lenisInstance = null
+      instance.destroy()
     }
   }, [])
 
-  return <>{children}</>
+  return <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
 }
 
 export { SmoothScrollProvider, useLenis }
