@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import { SmoothScrollProvider } from "@/components/shared/SmoothScroll";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -41,7 +42,7 @@ export default function RootLayout({
           })();
         `}</Script>
       </head>
-      <body className={`${spaceGrotesk.className} antialiased`}>{children}</body>
+      <body className={`${spaceGrotesk.className} antialiased`}><SmoothScrollProvider>{children}</SmoothScrollProvider></body>
     </html>
   );
 }

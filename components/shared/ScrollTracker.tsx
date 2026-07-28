@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
+import { useLenis } from "@/components/shared/SmoothScroll"
 
 const sections = [
   { label: "Hero", href: "#hero" },
@@ -21,9 +22,8 @@ const TOTAL = sections.length
 export default function ScrollTracker() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [progress, setProgress] = useState(0)
-  const observerRef = useRef<IntersectionObserver | null>(null)
-  const rafRef = useRef<number>(0)
   const offsetsRef = useRef<number[]>([])
+  const lenis = useLenis()
 
   const measureOffsets = useCallback(() => {
     const ids = sections.map((s) => s.href.replace("#", ""))
@@ -33,13 +33,20 @@ export default function ScrollTracker() {
     })
   }, [])
 
-  const onScroll = useCallback(() => {
-    cancelAnimationFrame(rafRef.current)
-    rafRef.current = requestAnimationFrame(() => {
+  useEffect(() => {
+    measureOffsets()
+    window.addEventListener("resize", measureOffsets)
+    return () => window.removeEventListener("resize", measureOffsets)
+  }, [measureOffsets])
+
+  useEffect(() => {
+    if (!lenis) return
+
+    const onScroll = (e: { scroll: number; limit: number }) => {
       const offsets = offsetsRef.current
       if (offsets.length === 0) return
 
-      const scrollY = window.scrollY + window.innerHeight * 0.4
+      const scrollY = e.scroll + window.innerHeight * 0.4
 
       let idx = 0
       for (let i = offsets.length - 1; i >= 0; i--) {
@@ -64,58 +71,19 @@ export default function ScrollTracker() {
           setProgress(idx / (TOTAL - 1))
         }
       }
-    })
-  }, [])
-
-  useEffect(() => {
-    measureOffsets()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    window.addEventListener("resize", measureOffsets)
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", measureOffsets)
-      cancelAnimationFrame(rafRef.current)
     }
-  }, [onScroll, measureOffsets])
 
-  useEffect(() => {
-    const ids = sections.map((s) => s.href.replace("#", ""))
-    const visible = new Map<string, number>()
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) visible.set(entry.target.id, entry.intersectionRatio)
-          else visible.delete(entry.target.id)
-        })
-
-        let best = -1
-        let bestId = ""
-        visible.forEach((ratio, id) => {
-          if (ratio > best) {
-            best = ratio
-            bestId = id
-          }
-        })
-        if (bestId) {
-          const idx = ids.indexOf(bestId)
-          if (idx !== -1) setActiveIndex(idx)
-        }
-      },
-      { threshold: [0, 0.15, 0.3, 0.5, 0.7, 0.85, 1] }
-    )
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observerRef.current!.observe(el)
-    })
-
-    return () => observerRef.current?.disconnect()
-  }, [])
+    lenis.on("scroll", onScroll)
+    return () => lenis.off("scroll", onScroll)
+  }, [lenis])
 
   const handleClick = (href: string) => {
     const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+    const currentLenis = useLenis()
+    if (el && currentLenis) {
+      const y = el.getBoundingClientRect().top + window.scrollY
+      currentLenis.scrollTo(y, { offset: 0, duration: 1.6 })
+    }
   }
 
   const totalHeight = (TOTAL - 1) * GAP + DOT_SIZE
@@ -136,7 +104,7 @@ export default function ScrollTracker() {
 
           {/* Progress fill */}
           <div
-            className="absolute left-[3px] top-[3px] w-px transition-[height] duration-150 ease-out"
+            className="absolute left-[3px] top-[3px] w-px"
             style={{
               height: `${fillHeight}px`,
               background: "var(--primary)",
@@ -161,8 +129,8 @@ export default function ScrollTracker() {
                       background: isActive
                         ? "var(--primary)"
                         : isPast
-                          ? "var(--primary)"
-                          : "var(--muted-foreground)",
+                        ? "var(--primary)"
+                        : "var(--muted-foreground)",
                       opacity: isActive ? 1 : isPast ? 0.4 : 0.3,
                       boxShadow: isActive ? "0 0 0 3px color-mix(in srgb, var(--primary) 25%, transparent)" : "none",
                     }}
