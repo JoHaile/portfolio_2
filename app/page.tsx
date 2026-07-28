@@ -1,7 +1,8 @@
 import NavBar from "@/components/shared/NavBar"
-import SectionNav from "@/components/shared/SectionNav"
+import ScrollTracker from "@/components/shared/ScrollTracker"
 import { HeroSection } from "@/components/shared/HeroSection"
 import { CapabilitiesSection } from "@/components/shared/CapabilitiesSection"
+import { ServicesSection } from "@/components/shared/ServicesSection"
 import { ProjectsSection } from "@/components/shared/ProjectsSection"
 import { EducationSection } from "@/components/shared/EducationSection"
 import { TechStackSection } from "@/components/shared/TechStackSection"
@@ -13,11 +14,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <SectionNav />
+      <ScrollTracker />
 
-      <main className="mx-auto max-w-[1280px] px-6 md:px-10">
+      <main className="mx-auto max-w-[1280px] px-6 md:px-10 lg:pl-[100px]">
         <HeroSection />
         <CapabilitiesSection />
+        <ServicesSection />
         <ProjectsSection />
 
         <section id="education" className="border-t border-border py-20 md:py-28">
@@ -31,7 +33,7 @@ export default function Home() {
         <ContactSection />
       </main>
 
-      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:pl-[100px]">
         <Footer />
       </div>
     </div>

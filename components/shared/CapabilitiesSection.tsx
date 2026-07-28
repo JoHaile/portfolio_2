@@ -20,7 +20,7 @@ const capabilities = [
 
 function CapabilitiesSection() {
   return (
-    <section className="border-t border-border pt-12 pb-20 md:pt-16 md:pb-28">
+    <section id="about" className="border-t border-border pt-12 pb-20 md:pt-16 md:pb-28">
       <Label>Capabilities</Label>
 
       <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
