@@ -4,12 +4,12 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
-const inputClass = "h-11 rounded-xl border border-cream-foreground/10 bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-200 hover:border-cream-foreground/15 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-const labelClass = "text-xs font-medium text-cream-foreground/60"
+const inputClass = "h-11 rounded-xl border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-200 hover:border-foreground/15 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+const labelClass = "text-xs font-medium text-muted-foreground"
 
 function ContactForm() {
   return (
-    <Card variant="cream" className="p-8 sm:p-10">
+    <Card variant="default" className="p-8 sm:p-10">
       <form
         className="flex flex-col gap-5"
         onSubmit={(e) => e.preventDefault()}
@@ -36,7 +36,7 @@ function ContactForm() {
             id="message"
             rows={5}
             placeholder="Tell me about your project, timeline, and goals..."
-            className="resize-none rounded-xl border border-cream-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-200 hover:border-cream-foreground/15 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-200 hover:border-foreground/15 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
 

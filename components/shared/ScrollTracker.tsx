@@ -6,9 +6,9 @@ import { useLenis } from "@/components/shared/SmoothScroll"
 const sections = [
   { label: "Hero", href: "#hero" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Education", href: "#education" },
+  { label: "Services", href: "#services" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ]

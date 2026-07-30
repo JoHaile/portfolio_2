@@ -24,7 +24,7 @@ function EducationSection({ className }: { className?: string }) {
       <div className="flex h-full flex-col rounded-[32px] bg-primary p-8 sm:p-10">
         <Label className="text-primary-foreground/60">Education</Label>
 
-        <h2 className="mt-6 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-primary-foreground sm:text-5xl">
+        <h2 className="mt-6 text-2xl font-bold tracking-[-0.03em] text-primary-foreground sm:text-3xl md:text-4xl">
           Learning through
           <br className="hidden sm:block" />
           formal education

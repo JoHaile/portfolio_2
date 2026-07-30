@@ -15,15 +15,14 @@ const contactInfo = [
     value: "Remote \u2022 Worldwide",
   },
   {
-    icon: Lightbulb,
-    label: "Current Focus",
-    value: "AI Products",
-    accent: true,
-  },
-  {
     icon: Clock,
     label: "Response Time",
     value: "Within 24 Hours",
+  },
+  {
+    icon: Lightbulb,
+    label: "Current Focus",
+    value: "AI Products",
   },
 ]
 
@@ -58,7 +57,7 @@ function ContactSection() {
       <div className="max-w-xl">
         <Label className="animate-fade-in">Contact</Label>
         <h2
-          className="mt-5 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-[56px] animate-fade-in-up"
+          className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
           style={{ animationDelay: "100ms" }}
         >
           Let&apos;s build something
@@ -77,57 +76,26 @@ function ContactSection() {
       {/* Contact layout */}
       <div className="mt-14 flex flex-col gap-10 lg:flex-row lg:gap-16">
         {/* Left — Info + social */}
-        <div className="flex flex-1 flex-col gap-4 lg:flex-[0.45]">
-          {/* Top row: Email + Location */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {contactInfo
-              .filter((i) => !i.accent)
-              .map((info) => {
-                const Icon = info.icon
-                return (
-                  <Card
-                    key={info.label}
-                    variant="default"
-                    className="group p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_-4px_rgba(240,90,40,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
-                  >
-                    <div className="flex items-start gap-3.5">
-                      <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted">
-                        <Icon className="size-4 text-muted-foreground" />
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-                          {info.label}
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-foreground">
-                          {info.value}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                )
-              })}
-          </div>
-
-          {/* Accent card: Current Focus */}
-          {contactInfo
-            .filter((i) => i.accent)
-            .map((info) => {
+        <div className="flex flex-1 flex-col lg:flex-[0.45]">
+          {/* 2x2 Grid: Email, Location, Response Time, Current Focus — 80% */}
+          <div className="grid grow grid-cols-1 gap-4 sm:grid-cols-2">
+            {contactInfo.map((info) => {
               const Icon = info.icon
               return (
                 <Card
                   key={info.label}
-                  variant="accent"
-                  className="group p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.2),0_4px_12px_-2px_rgba(0,0,0,0.1)]"
+                  variant="default"
+                  className="flex items-center justify-center p-7 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_-4px_rgba(240,90,40,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-foreground/15">
-                      <Icon className="size-5 text-primary-foreground" />
+                  <div className="flex flex-col items-center gap-3 text-center">
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-muted">
+                      <Icon className="size-5 text-muted-foreground" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-medium uppercase tracking-widest text-primary-foreground/60">
+                      <p className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
                         {info.label}
                       </p>
-                      <p className="mt-0.5 text-base font-semibold text-primary-foreground">
+                      <p className="mt-1 text-base font-medium text-foreground">
                         {info.value}
                       </p>
                     </div>
@@ -135,9 +103,10 @@ function ContactSection() {
                 </Card>
               )
             })}
+          </div>
 
-          {/* Social links */}
-          <div className="flex gap-3">
+          {/* Social links — 20% */}
+          <div className="mt-4 flex shrink-0 gap-3">
             {socialLinks.map((social) => {
               const Icon = social.icon
               return (

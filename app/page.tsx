@@ -2,10 +2,10 @@ import NavBar from "@/components/shared/NavBar"
 import ScrollTracker from "@/components/shared/ScrollTracker"
 import { HeroSection } from "@/components/shared/HeroSection"
 import { CapabilitiesSection } from "@/components/shared/CapabilitiesSection"
-import { ServicesSection } from "@/components/shared/ServicesSection"
 import { ProjectsSection } from "@/components/shared/ProjectsSection"
 import { EducationSection } from "@/components/shared/EducationSection"
 import { TechStackSection } from "@/components/shared/TechStackSection"
+import { ServicesSection } from "@/components/shared/ServicesSection"
 import { TestimonialsSection } from "@/components/shared/TestimonialsSection"
 import { ContactSection } from "@/components/shared/ContactSection"
 import { Footer } from "@/components/shared/Footer"
@@ -19,7 +19,6 @@ export default function Home() {
       <main className="mx-auto max-w-[1280px] px-6 md:px-10 lg:pl-[100px]">
         <HeroSection />
         <CapabilitiesSection />
-        <ServicesSection />
         <ProjectsSection />
 
         <section id="education" className="border-t border-border py-20 md:py-28">
@@ -29,6 +28,7 @@ export default function Home() {
           </div>
         </section>
 
+        <ServicesSection />
         <TestimonialsSection />
         <ContactSection />
       </main>

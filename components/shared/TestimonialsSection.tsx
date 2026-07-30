@@ -46,7 +46,7 @@ function TestimonialsSection() {
         <div className="max-w-xl">
           <Label className="animate-fade-in">Testimonials</Label>
           <h2
-            className="mt-5 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-[56px] animate-fade-in-up"
+            className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
             Words from people

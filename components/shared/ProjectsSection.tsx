@@ -61,7 +61,7 @@ function ProjectsSection() {
         <div className="max-w-2xl">
           <Label className="animate-fade-in">Selected Work</Label>
           <h2
-            className="mt-5 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-[56px] animate-fade-in-up"
+            className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
             Featured projects that
