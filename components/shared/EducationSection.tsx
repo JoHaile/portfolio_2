@@ -10,6 +10,13 @@ const educationEntries = [
     year: "2024",
   },
   {
+    degree: "Data Analyst & Cloud Engineering",
+    institution: "Datanomics",
+    description:
+      "Comprehensive training in data analysis, data presentation, and cloud engineering — turning raw data into actionable insights.",
+    year: "2023",
+  },
+  {
     degree: "Full Stack Web Development",
     institution: "Independent Learning & Bootcamps",
     description:
@@ -24,14 +31,8 @@ function EducationSection({ className }: { className?: string }) {
       <div className="flex h-full flex-col rounded-[32px] bg-primary p-8 sm:p-10">
         <Label className="text-primary-foreground/60">Education</Label>
 
-        <h2 className="mt-6 text-2xl font-bold tracking-[-0.03em] text-primary-foreground sm:text-3xl md:text-4xl">
-          Learning through
-          <br className="hidden sm:block" />
-          formal education
-          <br className="hidden sm:block" />
-          and real-world
-          <br className="hidden md:block" />
-          products.
+        <h2 className="mt-6 text-2xl font-bold tracking-[-0.03em] text-primary-foreground sm:text-3xl md:text-4xl max-w-[70%]">
+          Learning through formal education and real-world products.
         </h2>
 
         <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/70">

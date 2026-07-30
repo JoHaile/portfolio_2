@@ -43,23 +43,20 @@ function TestimonialsSection() {
     >
       {/* Section header */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <div className="max-w-xl">
+        <div className="max-w-[60%]">
           <Label className="animate-fade-in">Testimonials</Label>
           <h2
             className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
-            Words from people
-            <br className="hidden sm:block" /> I&apos;ve worked with.
+            Words from people I&apos;ve worked with.
           </h2>
         </div>
         <p
           className="text-sm text-muted-foreground animate-fade-in md:text-right"
           style={{ animationDelay: "200ms" }}
         >
-          Real feedback.
-          <br />
-          Unfiltered.
+          Real feedback. Unfiltered.
         </p>
       </div>
 

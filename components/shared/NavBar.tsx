@@ -15,11 +15,11 @@ import {
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Education", href: "#education" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
+  { label: "Services", href: "#services" },
 ];
 
 export default function NavBar() {

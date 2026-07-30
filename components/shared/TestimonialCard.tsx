@@ -26,26 +26,22 @@ function TestimonialCard({
     <article
       style={style}
       className={cn(
-        "group flex flex-col rounded-[20px] border border-cream/60 bg-cream p-8 transition-all duration-300 hover:-translate-y-1 hover:border-cream hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.10),0_4px_12px_-2px_rgba(0,0,0,0.06)]",
+        "group flex flex-col rounded-[20px] border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.10),0_4px_12px_-2px_rgba(0,0,0,0.06)]",
         className
       )}
     >
-      {/* Quote mark */}
       <div className="mb-5 text-[40px] font-bold leading-none tracking-tight text-primary/70">
         &ldquo;
       </div>
 
-      {/* Testimonial */}
-      <p className="flex-1 text-[15px] leading-[1.7] text-cream-foreground/80">
+      <p className="flex-1 text-[15px] leading-[1.7] text-muted-foreground">
         {quote}
       </p>
 
-      {/* Divider */}
-      <div className="my-6 h-px bg-gradient-to-r from-transparent via-cream-foreground/10 to-transparent" />
+      <div className="my-6 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* Author */}
       <div className="flex items-center gap-3.5">
-        <div className="relative size-11 shrink-0 overflow-hidden rounded-full ring-2 ring-cream-foreground/[0.06] ring-offset-2 ring-offset-cream">
+        <div className="relative size-11 shrink-0 overflow-hidden rounded-full ring-2 ring-border ring-offset-2 ring-offset-background">
           <Image
             src={avatarSrc}
             alt={avatarAlt}
@@ -55,12 +51,12 @@ function TestimonialCard({
           />
         </div>
         <div className="flex flex-col gap-0.5">
-          <span className="text-sm font-semibold tracking-tight text-cream-foreground">
+          <span className="text-sm font-semibold tracking-tight text-foreground">
             {authorName}
           </span>
-          <span className="text-xs text-cream-foreground/50">
+          <span className="text-xs text-muted-foreground/70">
             {authorRole} at{" "}
-            <span className="font-medium text-cream-foreground/60">
+            <span className="font-medium text-muted-foreground">
               {authorCompany}
             </span>
           </span>

@@ -34,14 +34,8 @@ function TechStackSection({ className }: { className?: string }) {
     <div className={cn("flex flex-1 flex-col", className)}>
       <Label className="animate-fade-in">Stack</Label>
 
-      <h2 className="mt-5 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-        A curated technical
-        <br className="hidden sm:block" />
-        stack for building
-        <br className="hidden sm:block" />
-        modern digital
-        <br className="hidden md:block" />
-        products.
+      <h2 className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl max-w-[70%] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+        A curated technical stack for building modern digital products.
       </h2>
 
       <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground animate-fade-in-up" style={{ animationDelay: "200ms" }}>

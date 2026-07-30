@@ -59,6 +59,31 @@ function HeroSection() {
           {/* Profile card */}
           <ProfileCard />
 
+          {/* Quick Facts */}
+          <div className="flex-1 rounded-2xl border border-border bg-card p-6 shadow-sm">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+              QUICK FACTS
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              <li className="flex items-center gap-2 text-xs text-foreground/80">
+                <span className="size-1.5 rounded-full bg-primary shrink-0" />
+                Ex Shopify, Vercel contractor
+              </li>
+              <li className="flex items-center gap-2 text-xs text-foreground/80">
+                <span className="size-1.5 rounded-full bg-primary shrink-0" />
+                Contributed to 3 OSS frameworks
+              </li>
+              <li className="flex items-center gap-2 text-xs text-foreground/80">
+                <span className="size-1.5 rounded-full bg-primary shrink-0" />
+                Shipped 2 profitable SaaS products
+              </li>
+              <li className="flex items-center gap-2 text-xs text-foreground/80">
+                <span className="size-1.5 rounded-full bg-primary shrink-0" />
+                Speaker at JSConf 2023
+              </li>
+            </ul>
+          </div>
+
           {/* Stats grid */}
           <div className="grid flex-1 grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="flex flex-col items-center gap-1.5">

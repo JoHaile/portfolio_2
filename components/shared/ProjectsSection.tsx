@@ -9,15 +9,12 @@ const projects = [
     status: "Production Ready",
     title: "Atlas Ops",
     description:
-      "A scalable operations platform with real-time analytics dashboards, automated workflows, role-based access, and a custom component library powering internal tooling.",
+      "An analytics platform with dashboards, automated workflows, and a component library powering internal tooling.",
     imageSrc:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80",
     imageAlt: "Atlas Ops analytics dashboard",
-    infoRows: [
-      { label: "Architecture", value: "Monorepo + Turborepo" },
-      { label: "Performance", value: "98 Lighthouse" },
-      { label: "Users", value: "12K+ active" },
-    ],
+    liveUrl: "https://atlasops.com/dashboard",
+    infoRows: [],
     techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis"],
   },
   {
@@ -25,15 +22,12 @@ const projects = [
     status: "Featured",
     title: "Signal Engine",
     description:
-      "An AI-powered content intelligence platform that analyzes, categorizes, and surfaces actionable insights from unstructured data at scale.",
+      "An AI-powered platform that analyzes and surfaces actionable insights from unstructured data.",
     imageSrc:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop&q=80",
     imageAlt: "Signal Engine AI interface",
-    infoRows: [
-      { label: "Interaction", value: "Streaming UI" },
-      { label: "Animation", value: "Framer Motion" },
-      { label: "AI", value: "RAG Pipeline" },
-    ],
+    liveUrl: "https://signalengine.ai",
+    infoRows: [],
     techStack: ["React", "Node.js", "OpenAI", "Pinecone", "Docker"],
   },
   {
@@ -41,15 +35,12 @@ const projects = [
     status: "Live",
     title: "Frame Docs",
     description:
-      "A collaborative documentation platform with real-time editing, version history, granular permissions, and a structured content API for developer teams.",
+      "A collaborative docs platform with real-time editing, version history, and a structured content API.",
     imageSrc:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80",
     imageAlt: "Frame Docs editor interface",
-    infoRows: [
-      { label: "Accessibility", value: "WCAG 2.1 AA" },
-      { label: "Architecture", value: "Server Actions" },
-      { label: "Uptime", value: "99.97%" },
-    ],
+    liveUrl: "https://framedocs.com",
+    infoRows: [],
     techStack: ["Next.js", "Supabase", "Tailwind", "Vercel", "TypeScript"],
   },
 ]
@@ -58,15 +49,13 @@ function ProjectsSection() {
   return (
     <section id="work" className="pb-20 md:pb-28">
       <div className="rounded-[32px] border border-border bg-muted/30 px-6 py-16 sm:px-10 sm:py-20 md:px-16 md:py-20">
-        <div className="max-w-2xl">
+        <div className="max-w-[60%]">
           <Label className="animate-fade-in">Selected Work</Label>
           <h2
             className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
-            Featured projects that
-            <br className="hidden sm:block" /> combine engineering with
-            <br className="hidden md:block" /> thoughtful design.
+            Featured projects that combine engineering with thoughtful design.
           </h2>
           <p
             className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground animate-fade-in-up sm:text-lg"
@@ -92,7 +81,7 @@ function ProjectsSection() {
           className="mt-14 flex justify-center animate-fade-in-up"
           style={{ animationDelay: "600ms" }}
         >
-          <Button variant="outline" size="lg" className="group">
+          <Button size="lg" className="group">
             View All Projects
             <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Button>

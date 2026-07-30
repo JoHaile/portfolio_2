@@ -1,4 +1,4 @@
-import { Code2, Palette, Zap, Server, Smartphone, Globe } from "lucide-react"
+import { Code2, Palette, Zap, Server, BarChart3, Globe } from "lucide-react"
 import { Label } from "@/components/ui/label"
 
 const services = [
@@ -27,10 +27,10 @@ const services = [
       "APIs, databases, auth, caching, and deployment pipelines — the invisible backbone of every product.",
   },
   {
-    icon: Smartphone,
-    title: "Responsive Engineering",
+    icon: BarChart3,
+    title: "Data Analytics",
     description:
-      "Mobile-first, accessible, and performant across every device and browser.",
+      "Dashboards, pipelines, and reports that transform complex data into clear, actionable business intelligence.",
   },
   {
     icon: Globe,
