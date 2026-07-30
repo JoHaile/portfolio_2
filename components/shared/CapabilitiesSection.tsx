@@ -1,24 +1,7 @@
 import { Label } from "@/components/ui/label"
+import type { Capability } from "@/data/capabilities"
 
-const capabilities = [
-  {
-    title: "Clean Architecture",
-    description:
-      "Scalable systems with maintainable code, test-driven practices, and thoughtful architecture decisions.",
-  },
-  {
-    title: "UI/UX Craft",
-    description:
-      "Interfaces that feel premium — every interaction, spacing decision, and visual hierarchy is intentional.",
-  },
-  {
-    title: "Optimized Delivery",
-    description:
-      "Fast, accessible products that perform under real-world conditions, from first paint to runtime.",
-  },
-]
-
-function CapabilitiesSection() {
+function CapabilitiesSection({ capabilities }: { capabilities: Capability[] }) {
   return (
     <section id="about" className="border-t border-border pt-12 pb-20 md:pt-16 md:pb-28">
       <Label>Capabilities</Label>

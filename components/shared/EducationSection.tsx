@@ -1,31 +1,8 @@
 import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
+import type { EducationEntry } from "@/data/education"
 
-const educationEntries = [
-  {
-    degree: "B.Sc. in Computer Science",
-    institution: "Addis Ababa University",
-    description:
-      "Focused on software engineering, systems design, algorithms, and human-centered computing.",
-    year: "2024",
-  },
-  {
-    degree: "Data Analyst & Cloud Engineering",
-    institution: "Datanomics",
-    description:
-      "Comprehensive training in data analysis, data presentation, and cloud engineering — turning raw data into actionable insights.",
-    year: "2023",
-  },
-  {
-    degree: "Full Stack Web Development",
-    institution: "Independent Learning & Bootcamps",
-    description:
-      "Intensive self-directed study covering modern frameworks, deployment pipelines, and production architecture.",
-    year: "2022",
-  },
-]
-
-function EducationSection({ className }: { className?: string }) {
+function EducationSection({ entries, className }: { entries: EducationEntry[]; className?: string }) {
   return (
     <div className={cn("flex flex-1 flex-col", className)}>
       <div className="flex h-full flex-col rounded-[32px] bg-primary p-8 sm:p-10">
@@ -42,7 +19,7 @@ function EducationSection({ className }: { className?: string }) {
 
         {/* Timeline */}
         <div className="mt-10 flex flex-col gap-4">
-          {educationEntries.map((entry, i) => (
+          {entries.map((entry, i) => (
             <div
               key={entry.degree}
               className={cn(

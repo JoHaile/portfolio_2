@@ -1,35 +1,8 @@
 import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
+import type { StackCategory } from "@/data/techStack"
 
-const stackCategories = [
-  {
-    name: "Frontend",
-    label: "Core Technologies",
-    items: ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"],
-  },
-  {
-    name: "Backend",
-    label: "Server Side",
-    items: ["Node.js", "Express", "NestJS", "REST", "GraphQL"],
-  },
-  {
-    name: "Database",
-    label: "Data Layer",
-    items: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Supabase"],
-  },
-  {
-    name: "DevOps",
-    label: "Infrastructure",
-    items: ["Docker", "AWS", "Vercel", "GitHub Actions", "Turborepo"],
-  },
-  {
-    name: "AI & Tools",
-    label: "Intelligence",
-    items: ["OpenAI", "LangChain", "Pinecone", "Python", "Git"],
-  },
-]
-
-function TechStackSection({ className }: { className?: string }) {
+function TechStackSection({ categories, className }: { categories: StackCategory[]; className?: string }) {
   return (
     <div className={cn("flex flex-1 flex-col", className)}>
       <Label className="animate-fade-in">Stack</Label>
@@ -45,7 +18,7 @@ function TechStackSection({ className }: { className?: string }) {
 
       {/* Categories */}
       <div className="mt-10 flex flex-col gap-5">
-        {stackCategories.map((cat, i) => (
+        {categories.map((cat, i) => (
           <div
             key={cat.name}
             className="group rounded-[20px] border border-border bg-background p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-md animate-fade-in-up"

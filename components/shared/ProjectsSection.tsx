@@ -2,50 +2,9 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { ProjectCard } from "@/components/shared/ProjectCard"
+import type { Project } from "@/data/projects"
 
-const projects = [
-  {
-    category: "Developer Platform",
-    status: "Production Ready",
-    title: "Atlas Ops",
-    description:
-      "An analytics platform with dashboards, automated workflows, and a component library powering internal tooling.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80",
-    imageAlt: "Atlas Ops analytics dashboard",
-    liveUrl: "https://atlasops.com/dashboard",
-    infoRows: [],
-    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis"],
-  },
-  {
-    category: "AI Product",
-    status: "Featured",
-    title: "Signal Engine",
-    description:
-      "An AI-powered platform that analyzes and surfaces actionable insights from unstructured data.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop&q=80",
-    imageAlt: "Signal Engine AI interface",
-    liveUrl: "https://signalengine.ai",
-    infoRows: [],
-    techStack: ["React", "Node.js", "OpenAI", "Pinecone", "Docker"],
-  },
-  {
-    category: "SaaS Platform",
-    status: "Live",
-    title: "Frame Docs",
-    description:
-      "A collaborative docs platform with real-time editing, version history, and a structured content API.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80",
-    imageAlt: "Frame Docs editor interface",
-    liveUrl: "https://framedocs.com",
-    infoRows: [],
-    techStack: ["Next.js", "Supabase", "Tailwind", "Vercel", "TypeScript"],
-  },
-]
-
-function ProjectsSection() {
+function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
     <section id="work" className="pb-20 md:pb-28">
       <div className="rounded-[32px] border border-border bg-muted/30 px-6 py-16 sm:px-10 sm:py-20 md:px-16 md:py-20">

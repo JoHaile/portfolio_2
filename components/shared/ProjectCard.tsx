@@ -10,7 +10,6 @@ interface ProjectCardProps {
   imageSrc: string
   imageAlt: string
   liveUrl?: string
-  infoRows: { label: string; value: string }[]
   techStack: string[]
   className?: string
   style?: React.CSSProperties
@@ -24,7 +23,6 @@ function ProjectCard({
   imageSrc,
   imageAlt,
   liveUrl,
-  infoRows,
   techStack,
   className,
   style,

@@ -1,10 +1,10 @@
 import { ArrowRight, Download, Mail } from "lucide-react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import ProfileCard from "./ProfileCard";
+import type { ProfileData } from "@/data/profile";
 
-function HeroSection() {
+function HeroSection({ profile }: { profile: ProfileData }) {
   return (
     <section id="hero" className="py-16 sm:py-20 md:py-24 lg:py-28">
       <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
@@ -57,7 +57,7 @@ function HeroSection() {
           style={{ animationDelay: "350ms" }}
         >
           {/* Profile card */}
-          <ProfileCard />
+          <ProfileCard profile={profile} />
 
           {/* Quick Facts */}
           <div className="flex-1 rounded-2xl border border-border bg-card p-6 shadow-sm">
