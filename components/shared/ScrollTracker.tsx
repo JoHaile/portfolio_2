@@ -111,7 +111,7 @@ export default function ScrollTracker() {
           />
 
           {/* Items */}
-          <div className="relative flex flex-col" style={{ gap: `${VISUAL_GAP}px` }}>
+          <div className="relative flex flex-col -mt-[45px]" style={{ gap: `${VISUAL_GAP}px` }}>
             {sections.map((section, i) => {
               const isActive = i === activeIndex
               const isPast = i < activeIndex

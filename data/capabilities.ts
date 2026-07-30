@@ -15,8 +15,8 @@ export const capabilities: Capability[] = [
       "Interfaces that feel premium — every interaction, spacing decision, and visual hierarchy is intentional.",
   },
   {
-    title: "Optimized Delivery",
+    title: "Data & Cloud",
     description:
-      "Fast, accessible products that perform under real-world conditions, from first paint to runtime.",
+      "Data analysis, visualization, and cloud engineering — turning raw information into actionable insights at scale.",
   },
 ]

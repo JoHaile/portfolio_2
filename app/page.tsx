@@ -3,8 +3,7 @@ import ScrollTracker from "@/components/shared/ScrollTracker"
 import { HeroSection } from "@/components/shared/HeroSection"
 import { CapabilitiesSection } from "@/components/shared/CapabilitiesSection"
 import { ProjectsSection } from "@/components/shared/ProjectsSection"
-import { EducationSection } from "@/components/shared/EducationSection"
-import { TechStackSection } from "@/components/shared/TechStackSection"
+import { EducationStackSection } from "@/components/shared/EducationStackSection"
 import { ServicesSection } from "@/components/shared/ServicesSection"
 import { TestimonialsSection } from "@/components/shared/TestimonialsSection"
 import { ContactSection } from "@/components/shared/ContactSection"
@@ -30,12 +29,7 @@ export default function Home() {
         <CapabilitiesSection capabilities={capabilities} />
         <ProjectsSection projects={projects} />
 
-        <section id="education" className="border-t border-border py-20 md:py-28">
-          <div className="flex flex-col gap-10 lg:flex-row lg:gap-10">
-            <EducationSection entries={educationEntries} />
-            <TechStackSection categories={stackCategories} />
-          </div>
-        </section>
+        <EducationStackSection entries={educationEntries} categories={stackCategories} />
 
         <ServicesSection services={services} />
         <TestimonialsSection testimonials={testimonials} />
