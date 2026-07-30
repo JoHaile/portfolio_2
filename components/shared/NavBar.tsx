@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Menu, X, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher"
+import { useState } from "react";
+import { Menu, X, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import {
   Drawer,
   DrawerClose,
@@ -11,7 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/ui/drawer";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -20,10 +20,10 @@ const navLinks = [
   { label: "Education", href: "#education" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export default function NavBar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 h-[72px] flex items-center border-b border-border bg-background/80 backdrop-blur-md">
@@ -32,10 +32,10 @@ export default function NavBar() {
           <div className="size-2.5 rounded-full bg-primary" />
           <div className="flex flex-col">
             <span className="text-sm font-bold tracking-tight text-foreground">
-              yohannes.dev
+              Yohannes Haile
             </span>
-            <span className="hidden text-[10px] leading-tight text-muted-foreground sm:block">
-              Designer & Developer building bold digital products
+            <span className="hidden text-[12px] leading-tight text-foreground/70 sm:block">
+              Designer, Developer & Data Analyst
             </span>
           </div>
         </div>
@@ -109,5 +109,5 @@ export default function NavBar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

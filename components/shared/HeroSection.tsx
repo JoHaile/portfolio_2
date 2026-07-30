@@ -1,7 +1,8 @@
-import { ArrowRight, Download, Mail } from "lucide-react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+import { ArrowRight, Download, Mail } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import ProfileCard from "./ProfileCard";
 
 function HeroSection() {
   return (
@@ -12,17 +13,14 @@ function HeroSection() {
             style={{ animationDelay: "100ms" }}
             className="animate-fade-in"
           >
-            Fullstack Developer
+            Fullstack Developer and Data Analyst
           </Label>
 
           <h1
-            className="text-[2.75rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-6xl md:text-7xl lg:text-[5rem] animate-fade-in-up"
+            className="text-xl font-bold leading-[1.5] tracking-[-0.03em] text-foreground sm:text-2xl md:text-4xl lg:text-5xl  animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            I craft products
-            <br className="hidden sm:block" /> with clear systems
-            <br className="hidden md:block" /> and strong visual
-            <br className="hidden lg:block" /> design.
+            I craft products with clear systems and strong visual design.
           </h1>
 
           <p
@@ -34,26 +32,23 @@ function HeroSection() {
           </p>
 
           <div
-            className="flex flex-wrap items-center gap-4 animate-fade-in-up"
+            className="flex flex-wrap items-center gap-4 animate-fade-in-up mt-10"
             style={{ animationDelay: "400ms" }}
           >
-            <Button variant="default" size="lg" className="group">
+            <Button variant={"outline"}>
               Download Resume
               <Download className="size-4 transition-transform duration-200 group-hover:translate-y-0.5" />
             </Button>
-            <Button variant="outline" size="lg" className="group">
+            <Button variant="outline">
               <a href="#work" className="flex items-center gap-2">
                 View Work
                 <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
             </Button>
-            <a
-              href="#contact"
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
-            >
-              <Mail className="size-4" />
+            <Button variant={"default"}>
+              <Mail className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               Get in touch
-            </a>
+            </Button>
           </div>
         </div>
 
@@ -62,31 +57,7 @@ function HeroSection() {
           style={{ animationDelay: "350ms" }}
         >
           {/* Profile card */}
-          <div className="flex flex-1 items-center gap-5 rounded-2xl border border-border bg-card p-6 shadow-sm sm:flex-col sm:items-center sm:text-center lg:flex-row lg:text-left">
-            <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl ring-4 ring-border sm:size-28">
-              <Image
-                src="/hero.jpg"
-                alt="Yohannes Haile"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <h2 className="text-xl font-bold tracking-tight text-foreground">
-                Yohannes Haile
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Senior Full Stack Engineer
-              </p>
-              <div className="mt-1.5 flex items-center gap-2 sm:justify-center lg:justify-start">
-                <span className="size-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-primary">
-                  Available for new projects
-                </span>
-              </div>
-            </div>
-          </div>
+          <ProfileCard />
 
           {/* Stats grid */}
           <div className="grid flex-1 grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-6 shadow-sm">
@@ -118,7 +89,7 @@ function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export { HeroSection }
+export { HeroSection };
