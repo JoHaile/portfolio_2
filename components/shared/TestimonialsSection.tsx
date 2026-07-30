@@ -29,7 +29,7 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
       </div>
 
       {/* Testimonials grid */}
-      <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((testimonial, i) => (
           <TestimonialCard
             key={testimonial.authorName}

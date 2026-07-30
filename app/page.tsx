@@ -25,7 +25,7 @@ export default function Home() {
       <NavBar />
       <ScrollTracker />
 
-      <main className="mx-auto max-w-[1280px] px-6 md:px-10 lg:pl-[100px]">
+      <main className="mx-auto max-w-[1440px] px-6 md:px-10 lg:pl-[100px]">
         <HeroSection profile={profile} />
         <CapabilitiesSection capabilities={capabilities} />
         <ProjectsSection projects={projects} />
@@ -42,7 +42,7 @@ export default function Home() {
         <ContactSection contactInfo={contactInfo} socialLinks={socialLinks} />
       </main>
 
-      <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:pl-[100px]">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:pl-[100px]">
         <Footer />
       </div>
     </div>

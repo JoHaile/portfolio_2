@@ -13,7 +13,7 @@ function HeroSection({ profile }: { profile: ProfileData }) {
             style={{ animationDelay: "100ms" }}
             className="animate-fade-in"
           >
-            Fullstack Developer and Data Analyst
+            Fullstack Developer and Junior Data Analyst
           </Label>
 
           <h1

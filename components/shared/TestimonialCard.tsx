@@ -26,11 +26,11 @@ function TestimonialCard({
     <article
       style={style}
       className={cn(
-        "group flex flex-col rounded-[20px] border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.10),0_4px_12px_-2px_rgba(0,0,0,0.06)]",
+        "group flex flex-col rounded-[20px] border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.10),0_4px_12px_-2px_rgba(0,0,0,0.06)]",
         className
       )}
     >
-      <div className="mb-5 text-[40px] font-bold leading-none tracking-tight text-primary/70">
+      <div className="mb-3 text-3xl font-bold leading-none tracking-tight text-primary/70">
         &ldquo;
       </div>
 
@@ -38,7 +38,7 @@ function TestimonialCard({
         {quote}
       </p>
 
-      <div className="my-6 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="my-4 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="flex items-center gap-3.5">
         <div className="relative size-11 shrink-0 overflow-hidden rounded-full ring-2 ring-border ring-offset-2 ring-offset-background">
