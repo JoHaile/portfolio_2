@@ -9,7 +9,7 @@ const labelClass = "text-xs font-medium text-muted-foreground"
 
 function ContactForm() {
   return (
-    <Card variant="default" className="p-8 sm:p-10">
+    <Card variant="default" className="p-6 sm:p-8 md:p-10">
       <form
         className="flex flex-col gap-5"
         onSubmit={(e) => e.preventDefault()}

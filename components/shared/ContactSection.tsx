@@ -7,7 +7,7 @@ function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo
   return (
     <section id="contact" className="border-t border-border py-20 md:py-28">
       {/* Section header */}
-      <div className="max-w-[60%]">
+      <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
         <Label className="animate-fade-in">Contact</Label>
         <h2
           className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
@@ -55,7 +55,7 @@ function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo
           </div>
 
           {/* Social links — 20% */}
-          <div className="mt-4 flex shrink-0 gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             {socialLinks.map((social) => {
               const Icon = social.icon
               return (

@@ -60,7 +60,7 @@ function EducationStackSection({
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 transition-transform duration-300 group-hover:scale-105">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-transform duration-300 group-hover:scale-105 sm:size-11">
                         <Icon
                           className="size-5 text-primary"
                           fill="currentColor"
@@ -68,8 +68,8 @@ function EducationStackSection({
                         />
                       </div>
 
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground">
+                      <div className="min-w-0">
+                        <h3 className="text-base font-bold text-foreground sm:text-lg">
                           {entry.degree}
                         </h3>
                         <p className="mt-0.5 text-sm text-muted-foreground">
@@ -102,12 +102,12 @@ function EducationStackSection({
                   className="group rounded-[20px] border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_8px_30px_-4px_rgba(240,90,40,0.08),0_4px_12px_-2px_rgba(0,0,0,0.04)] sm:p-7"
                 >
                   <div className="mb-5 flex items-center gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 sm:size-11">
                       <Icon className="size-5 text-primary" />
                     </div>
 
-                    <div>
-                      <h3 className="text-base font-semibold text-foreground">
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-semibold text-foreground sm:text-base">
                         {cat.name}
                       </h3>
                       <span className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">

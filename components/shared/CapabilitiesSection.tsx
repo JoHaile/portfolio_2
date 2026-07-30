@@ -6,7 +6,7 @@ function CapabilitiesSection({ capabilities }: { capabilities: Capability[] }) {
     <section id="about" className="border-t border-border pt-12 pb-20 md:pt-16 md:pb-28">
       <Label>Capabilities</Label>
 
-      <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
+      <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-3">
         {capabilities.map((cap) => (
           <div key={cap.title}>
             <h3 className="text-sm font-semibold tracking-tight text-foreground">

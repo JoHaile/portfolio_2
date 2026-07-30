@@ -16,14 +16,14 @@ function HeroSection({ profile }: { profile: ProfileData }) {
           </Label>
 
           <h1
-            className="text-xl font-bold leading-[1.5] tracking-[-0.03em] text-foreground sm:text-2xl md:text-4xl lg:text-5xl  animate-fade-in-up"
+            className="text-[22px] font-bold leading-[1.35] tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl lg:text-5xl  animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
             I craft products with clear systems and strong visual design.
           </h1>
 
           <p
-            className="max-w-lg text-base leading-relaxed text-muted-foreground animate-fade-in-up sm:text-lg"
+            className="max-w-lg text-sm leading-relaxed text-muted-foreground animate-fade-in-up sm:text-base lg:text-lg"
             style={{ animationDelay: "300ms" }}
           >
             Senior Full Stack Engineer based in Addis Ababa. Building products
@@ -50,7 +50,7 @@ function HeroSection({ profile }: { profile: ProfileData }) {
         </div>
 
         <div
-          className="flex w-full flex-col gap-4 animate-fade-in-up sm:flex-row lg:w-[400px] lg:flex-col lg:shrink-0"
+          className="flex w-full flex-col gap-4 animate-fade-in-up md:flex-row lg:w-[400px] lg:flex-col lg:shrink-0"
           style={{ animationDelay: "350ms" }}
         >
           {/* Profile card */}

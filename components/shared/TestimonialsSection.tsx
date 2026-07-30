@@ -11,7 +11,7 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
     >
       {/* Section header */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <div className="max-w-[60%]">
+        <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
           <Label className="animate-fade-in">Testimonials</Label>
           <h2
             className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
@@ -42,7 +42,7 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
 
       {/* Trust bar */}
       <div
-        className="mt-14 flex flex-col items-center justify-between gap-6 rounded-[20px] border border-border bg-background px-8 py-7 sm:flex-row sm:gap-4 animate-fade-in-up"
+        className="mt-14 flex flex-col items-center justify-between gap-6 rounded-[20px] border border-border bg-background px-6 py-7 sm:flex-row sm:gap-4 sm:px-8 animate-fade-in-up"
         style={{ animationDelay: "600ms" }}
       >
         {/* Rating */}

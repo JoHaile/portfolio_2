@@ -80,7 +80,7 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-auto flex gap-2">
+        <div className="mt-auto flex flex-wrap gap-2">
           {liveUrl && (
             <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
               View Live
