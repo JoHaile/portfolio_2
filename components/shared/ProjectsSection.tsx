@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { ProjectCard } from "@/components/shared/ProjectCard"
 import type { Project } from "@/data/projects"
@@ -40,10 +39,10 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
           className="mt-14 flex justify-center animate-fade-in-up"
           style={{ animationDelay: "600ms" }}
         >
-          <Button size="lg" className="group">
+          <span className="group/btn inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
             View All Projects
-            <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </Button>
+            <ArrowRight className="size-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+          </span>
         </div>
       </div>
     </section>

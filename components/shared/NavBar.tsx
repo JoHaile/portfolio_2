@@ -98,7 +98,7 @@ export default function NavBar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="flex items-center gap-2.5 rounded-xl bg-primary px-4 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  className="flex items-center gap-2.5 rounded-full bg-primary px-4 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   <Mail className="size-4" />
                   Contact

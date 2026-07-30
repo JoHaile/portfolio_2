@@ -1,5 +1,4 @@
 import { ArrowRight, Download, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import ProfileCard from "./ProfileCard";
 import type { ProfileData } from "@/data/profile";
@@ -35,20 +34,18 @@ function HeroSection({ profile }: { profile: ProfileData }) {
             className="flex flex-wrap items-center gap-4 animate-fade-in-up mt-10"
             style={{ animationDelay: "400ms" }}
           >
-            <Button variant={"outline"}>
+            <span className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-5 py-2.5 text-sm font-medium text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground hover:shadow-[0_4px_16px_-4px_rgba(240,90,40,0.3)]">
               Download Resume
-              <Download className="size-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-            </Button>
-            <Button variant="outline">
-              <a href="#work" className="flex items-center gap-2">
-                View Work
-                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </a>
-            </Button>
-            <Button variant={"default"}>
-              <Mail className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <Download className="size-4 transition-all duration-300 group-hover/btn:-translate-y-1" />
+            </span>
+            <a href="#work" className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-xl bg-muted px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted/80 hover:shadow-md">
+              View Work
+              <ArrowRight className="size-4 transition-all duration-300 group-hover/btn:translate-x-1" />
+            </a>
+            <span className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+              <Mail className="size-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
               Get in touch
-            </Button>
+            </span>
           </div>
         </div>
 

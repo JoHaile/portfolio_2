@@ -6,6 +6,7 @@ export interface Project {
   imageSrc: string
   imageAlt: string
   liveUrl?: string
+  sourceUrl?: string
   techStack: string[]
 }
 
@@ -20,6 +21,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80",
     imageAlt: "Atlas Ops analytics dashboard",
     liveUrl: "https://atlasops.com/dashboard",
+    sourceUrl: "https://github.com/user/atlasops",
     techStack: ["Next.js", "Prisma", "PostgreSQL", "Redis"],
   },
   {
@@ -32,6 +34,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop&q=80",
     imageAlt: "Signal Engine AI interface",
     liveUrl: "https://signalengine.ai",
+    sourceUrl: "https://github.com/user/signal-engine",
     techStack: ["React", "Node.js", "Pinecone", "Docker"],
   },
   {
@@ -44,6 +47,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80",
     imageAlt: "Frame Docs editor interface",
     liveUrl: "https://framedocs.com",
+    sourceUrl: "https://github.com/user/frame-docs",
     techStack: ["Next.js", "Supabase", "Tailwind", "Vercel"],
   },
 ]

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ExternalLink, GitBranch } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface ProjectCardProps {
@@ -10,6 +10,7 @@ interface ProjectCardProps {
   imageSrc: string
   imageAlt: string
   liveUrl?: string
+  sourceUrl?: string
   techStack: string[]
   className?: string
   style?: React.CSSProperties
@@ -23,6 +24,7 @@ function ProjectCard({
   imageSrc,
   imageAlt,
   liveUrl,
+  sourceUrl,
   techStack,
   className,
   style,
@@ -78,11 +80,19 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-auto">
-          <span className="group/btn inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-            View App
-            <ArrowRight className="size-3 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-          </span>
+        <div className="mt-auto flex gap-2">
+          {liveUrl && (
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+              View Live
+              <ExternalLink className="size-3 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+            </a>
+          )}
+          {sourceUrl && (
+            <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="group/btn inline-flex cursor-pointer items-center gap-1.5 rounded-xl border border-border px-4 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted hover:shadow-md">
+              <GitBranch className="size-3" />
+              Source Code
+            </a>
+          )}
         </div>
       </div>
     </article>
