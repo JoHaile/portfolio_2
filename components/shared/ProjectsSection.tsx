@@ -6,9 +6,9 @@ import type { Project } from "@/data/projects"
 function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
     <section id="work" className="pb-20 md:pb-28">
-      <div className="rounded-[32px] border border-border bg-muted/30 px-6 py-16 sm:px-10 sm:py-20 md:px-16 md:py-20">
+      <div className="py-16 sm:px-6 sm:py-20 md:px-6 md:py-20">
         <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
-          <Label className="animate-fade-in">Selected Work</Label>
+          <Label className="animate-fade-in text-primary">Selected Work</Label>
           <h2
             className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
