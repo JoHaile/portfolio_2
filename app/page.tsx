@@ -26,7 +26,7 @@ export default function Home() {
       <NavBar />
       <ScrollTracker />
 
-      <main className="mx-auto max-w-[1250px] px-6 md:px-10 lg:pl-[100px] bg-muted/40">
+      <main className="mx-auto max-w-[1250px] px-6 md:px-10 lg:pl-[100px]">
         <HeroSection profile={profile} />
         <CapabilitiesSection capabilities={capabilities} />
         <ProjectsSection projects={projects} />
