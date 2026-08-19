@@ -5,18 +5,18 @@ export interface Capability {
 
 export const capabilities: Capability[] = [
   {
-    title: "Clean Architecture",
+    title: "Full-Stack Development",
     description:
-      "Scalable systems with maintainable code, test-driven practices, and thoughtful architecture decisions.",
+      "Building web apps with Next.js, React, TypeScript, and Node.js. Implementing REST APIs, secure auth (Better Auth), and relational database schemas with Prisma & PostgreSQL.",
   },
   {
-    title: "UI/UX Craft",
+    title: "Type-Safe UI Systems",
     description:
-      "Interfaces that feel premium — every interaction, spacing decision, and visual hierarchy is intentional.",
+      "Creating accessible interfaces using Tailwind CSS, Radix UI, ShadCN UI, and handling validated form workflows with Zod and React Hook Form.",
   },
   {
-    title: "Data & Cloud",
+    title: "AI Integration & Analytics",
     description:
-      "Data analysis, visualization, and cloud engineering — turning raw information into actionable insights at scale.",
+      "Integrating machine learning models (CNNs for image classification), LLM APIs, Python scripts, SQL query optimization, and CI/CD automated deployment pipelines.",
   },
 ]

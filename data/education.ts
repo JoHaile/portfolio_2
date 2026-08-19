@@ -1,30 +1,26 @@
 export interface EducationEntry {
   degree: string
   institution: string
+  location?: string
   description: string
   year: string
 }
 
 export const educationEntries: EducationEntry[] = [
   {
-    degree: "B.Sc. in Computer Science",
-    institution: "Addis Ababa University",
+    degree: "Bachelor of Science in Computer Science",
+    institution: "University of Gondar",
+    location: "Gondar, Ethiopia",
     description:
-      "Focused on software engineering, systems design, algorithms, and human-centered computing.",
-    year: "2024",
+      "Relevant study: software engineering, algorithms, database systems, computer networks, and full-stack application development.",
+    year: "2022 – 2026",
   },
   {
-    degree: "Data Analyst & Cloud Engineering",
-    institution: "Datanomics",
+    degree: "Data Analytics & Cloud Engineering Program",
+    institution: "Datanomic",
+    location: "Professional Training",
     description:
-      "Comprehensive training in data analysis, data presentation, and cloud engineering — turning raw data into actionable insights.",
-    year: "2023",
-  },
-  {
-    degree: "Full Stack Web Development",
-    institution: "Independent Learning & Bootcamps",
-    description:
-      "Intensive self-directed study covering modern frameworks, deployment pipelines, and production architecture.",
-    year: "2022",
+      "Practical training in Python, SQL, data visualization, cloud infrastructure, and scalable application deployment.",
+    year: "Completed",
   },
 ]

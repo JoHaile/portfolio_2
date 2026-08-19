@@ -1,4 +1,4 @@
-import { Code2, Palette, Zap, Server, BarChart3, Globe } from "lucide-react"
+import { Code2, Server, ShieldCheck, Brain, Database, Users } from "lucide-react"
 
 export interface Service {
   icon: typeof Code2
@@ -9,38 +9,38 @@ export interface Service {
 export const services: Service[] = [
   {
     icon: Code2,
-    title: "Full Stack Development",
+    title: "Full-Stack Development",
     description:
-      "End-to-end product engineering — from database schema to pixel-perfect interfaces, built for scale.",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Thoughtful interfaces grounded in usability, visual hierarchy, and consistent design systems.",
-  },
-  {
-    icon: Zap,
-    title: "Performance Optimization",
-    description:
-      "Core Web Vitals, bundle analysis, and runtime profiling to ship products that feel instant.",
+      "Building web applications with Next.js, React, and TypeScript for responsive interfaces and server-side rendering.",
   },
   {
     icon: Server,
-    title: "Backend & Infrastructure",
+    title: "Backend & API Engineering",
     description:
-      "APIs, databases, auth, caching, and deployment pipelines — the invisible backbone of every product.",
+      "Designing REST APIs, Node.js/Express web servers, and scalable serverless functions.",
   },
   {
-    icon: BarChart3,
-    title: "Data Analytics",
+    icon: ShieldCheck,
+    title: "Auth & Access Control",
     description:
-      "Dashboards, pipelines, and reports that transform complex data into clear, actionable business intelligence.",
+      "Implementing secure authentication (Better Auth, NextAuth, OAuth) and Role-Based Access Control (RBAC).",
   },
   {
-    icon: Globe,
-    title: "Technical Consulting",
+    icon: Brain,
+    title: "AI Model & API Integration",
     description:
-      "Architecture reviews, stack selection, and technical strategy for teams building at pace.",
+      "Connecting web platforms with LLM APIs, image classification models (CNNs), and Python services.",
+  },
+  {
+    icon: Database,
+    title: "Database & Data Layer",
+    description:
+      "Relational data modeling, SQL optimization, and ORM integration using Prisma, Drizzle, PostgreSQL, and MySQL.",
+  },
+  {
+    icon: Users,
+    title: "Agile & Team Leadership",
+    description:
+      "Facilitating Scrum ceremonies (stand-ups, sprint planning) and setting up automated CI/CD deployment pipelines.",
   },
 ]

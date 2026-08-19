@@ -14,12 +14,12 @@ import {
 } from "@/components/ui/drawer";
 
 const navLinks = [
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Education", href: "#education" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education & Stack", href: "#education" },
+  { label: "Services", href: "#services" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
-  { label: "Services", href: "#services" },
 ];
 
 export default function NavBar() {
@@ -35,7 +35,7 @@ export default function NavBar() {
               Yohannes Haile
             </span>
             <span className="hidden text-[12px] leading-tight text-foreground/70 sm:block">
-              Designer, Developer & Data Analyst
+              Full-Stack Developer | Next.js, React & TS
             </span>
           </div>
         </div>

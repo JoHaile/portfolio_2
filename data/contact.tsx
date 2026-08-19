@@ -1,16 +1,17 @@
-import { Mail, MapPin, Clock, Lightbulb } from "lucide-react"
+import { Mail, MapPin, Phone, Lightbulb } from "lucide-react"
 
 export interface ContactInfo {
   icon: typeof Mail
   label: string
   value: string
+  href?: string
 }
 
 export const contactInfo: ContactInfo[] = [
-  { icon: Mail, label: "Email", value: "hello@yohannes.dev" },
-  { icon: MapPin, label: "Location", value: "Remote \u2022 Worldwide" },
-  { icon: Clock, label: "Response Time", value: "Within 24 Hours" },
-  { icon: Lightbulb, label: "Current Focus", value: "AI Products" },
+  { icon: Mail, label: "Email", value: "yohannes.h93@gmail.com", href: "mailto:yohannes.h93@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+251 9 35 35 55 87", href: "tel:+251935355587" },
+  { icon: MapPin, label: "Location", value: "Addis Ababa, Ethiopia" },
+  { icon: Lightbulb, label: "Current Focus", value: "Multi-brand Travel & AI Products" },
 ]
 
 export interface SocialLink {
@@ -20,9 +21,9 @@ export interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "#", icon: GithubIcon },
-  { label: "LinkedIn", href: "#", icon: LinkedinIcon },
-  { label: "X / Twitter", href: "#", icon: TwitterIcon },
+  { label: "GitHub", href: "https://github.com/johaile", icon: GithubIcon },
+  { label: "LinkedIn", href: "https://linkedin.com/in/johnny-haile", icon: LinkedinIcon },
+  { label: "Email", href: "mailto:yohannes.h93@gmail.com", icon: MailIcon },
 ]
 
 function GithubIcon({ className }: { className?: string }) {
@@ -41,10 +42,8 @@ function LinkedinIcon({ className }: { className?: string }) {
   )
 }
 
-function TwitterIcon({ className }: { className?: string }) {
+function MailIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
+    <Mail className={className} />
   )
 }
