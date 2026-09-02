@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { ContactForm } from "@/components/shared/ContactForm"
+import { DataIcon } from "@/components/shared/DataIcon"
 import type { ContactInfo, SocialLink } from "@/data/contact"
 
 function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo[]; socialLinks: SocialLink[] }) {
@@ -37,7 +38,7 @@ function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo
                   className="flex flex-col items-center justify-center gap-2.5 p-6 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm h-full"
                 >
                   <div className="flex size-9 items-center justify-center rounded-xl bg-muted">
-                    <Icon className="size-4.5 text-muted-foreground" />
+                    <DataIcon name={Icon} className="size-4.5 text-muted-foreground" />
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -75,7 +76,7 @@ function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo
                   aria-label={social.label}
                   className="group flex size-11 items-center justify-center rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/5"
                 >
-                  <Icon className="size-4.5 text-muted-foreground transition-colors duration-200 group-hover:text-primary" />
+                  <DataIcon name={Icon} className="size-4.5 text-muted-foreground transition-colors duration-200 group-hover:text-primary" />
                 </a>
               )
             })}

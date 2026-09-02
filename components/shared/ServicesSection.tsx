@@ -1,5 +1,6 @@
 import { Label } from "@/components/ui/label"
 import type { Service } from "@/data/services"
+import { DataIcon } from "@/components/shared/DataIcon"
 
 function ServicesSection({ services }: { services: Service[] }) {
   return (
@@ -15,7 +16,7 @@ function ServicesSection({ services }: { services: Service[] }) {
               className="group rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-md"
             >
               <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-muted transition-colors duration-200 group-hover:bg-primary/10">
-                <Icon className="size-5 text-muted-foreground transition-colors duration-200 group-hover:text-primary" />
+                <DataIcon name={Icon} className="size-5 text-muted-foreground transition-colors duration-200 group-hover:text-primary" />
               </div>
               <h3 className="text-sm font-semibold tracking-tight text-foreground">
                 {service.title}
