@@ -1,49 +1,41 @@
 import { Star } from "lucide-react"
-import { Label } from "@/components/ui/label"
 import { TestimonialCard } from "@/components/shared/TestimonialCard"
+import { SectionEyebrow } from "./SectionEyebrow"
 import type { Testimonial } from "@/data/testimonials"
 
 function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) {
   return (
     <section
       id="testimonials"
-      className="border-t border-border py-20 md:py-28"
+      className="border-t border-border py-16 md:py-20"
     >
+      <div className="reveal">
       {/* Section header */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
-          <Label className="animate-fade-in">Testimonials</Label>
-          <h2
-            className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
-            style={{ animationDelay: "100ms" }}
-          >
+          <SectionEyebrow>Testimonials</SectionEyebrow>
+          <h2 className="mt-4 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl">
             Words from people I&apos;ve worked with.
           </h2>
         </div>
-        <p
-          className="text-sm text-muted-foreground animate-fade-in md:text-right"
-          style={{ animationDelay: "200ms" }}
-        >
+        <p className="text-sm text-muted-foreground md:text-right">
           Real feedback. Unfiltered.
         </p>
       </div>
 
       {/* Testimonials grid */}
-      <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((testimonial, i) => (
+      <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.authorName}
             {...testimonial}
-            className="animate-fade-in-up"
-            style={{ animationDelay: `${300 + i * 100}ms` }}
           />
         ))}
       </div>
 
       {/* Trust bar */}
       <div
-        className="mt-14 flex flex-col items-center justify-between gap-6 rounded-[20px] border border-border bg-background px-6 py-7 sm:flex-row sm:gap-4 sm:px-8 animate-fade-in-up"
-        style={{ animationDelay: "600ms" }}
+        className="mt-14 flex flex-col items-center justify-between gap-6 rounded-[20px] border border-border bg-background px-6 py-7 sm:flex-row sm:gap-4 sm:px-8"
       >
         {/* Rating */}
         <div className="flex items-center gap-3">
@@ -91,6 +83,7 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
             </span>
           </div>
         </div>
+      </div>
       </div>
     </section>
   )

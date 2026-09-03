@@ -90,23 +90,27 @@ export default function ScrollTracker() {
 
   return (
     <div className="pointer-events-none fixed left-0 top-0 z-40 hidden h-screen w-[100px] lg:block">
-      <div className="absolute left-[28px] top-1/2 -translate-y-1/2">
+      <div className="absolute left-[30px] top-[150px]">
         <nav className="relative" aria-label="Section navigation">
           {/* Track line */}
           <div
-            className="absolute left-[3px] top-[3px] w-px"
+            className="absolute left-[3px] top-[12px] w-[2px] rounded-full"
             style={{
               height: `${totalHeight}px`,
-              background: "var(--border)",
+              background:
+                "linear-gradient(to bottom, var(--border), color-mix(in srgb, var(--border) 30%, transparent))",
             }}
           />
 
           {/* Progress fill */}
           <div
-            className="absolute left-[3px] top-[3px] w-px"
+            className="absolute left-[3px] top-[13px] w-[2px] rounded-full"
             style={{
               height: `${fillHeight}px`,
-              background: "var(--primary)",
+              background:
+                "linear-gradient(to bottom, color-mix(in srgb, var(--primary) 45%, transparent), var(--primary))",
+              boxShadow:
+                "0 0 8px 0 color-mix(in srgb, var(--primary) 40%, transparent)",
             }}
           />
 
@@ -121,7 +125,9 @@ export default function ScrollTracker() {
                   {/* Dot */}
                   <button
                     onClick={() => handleClick(section.href)}
-                    className="pointer-events-auto relative z-10 flex items-center justify-center rounded-full transition-all duration-200"
+                    className={`pointer-events-auto relative z-10 flex items-center justify-center rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-1 ${
+                      isActive ? "dot-active dot-pulse" : ""
+                    }`}
                     style={{
                       width: isActive ? DOT_SIZE_ACTIVE : DOT_SIZE,
                       height: isActive ? DOT_SIZE_ACTIVE : DOT_SIZE,
@@ -130,8 +136,7 @@ export default function ScrollTracker() {
                         : isPast
                         ? "var(--primary)"
                         : "var(--muted-foreground)",
-                      opacity: isActive ? 1 : isPast ? 0.4 : 0.3,
-                      boxShadow: isActive ? "0 0 0 3px color-mix(in srgb, var(--primary) 25%, transparent)" : "none",
+                      opacity: isActive ? 1 : isPast ? 0.45 : 0.35,
                     }}
                     aria-label={`Go to ${section.label}`}
                   />
@@ -139,12 +144,17 @@ export default function ScrollTracker() {
                   {/* Label */}
                   <button
                     onClick={() => handleClick(section.href)}
-                    className={`pointer-events-auto ml-4 whitespace-nowrap rounded-sm transition-all duration-200 ${
+                    className={`pointer-events-auto cursor-pointer ml-4 flex items-center gap-1.5 whitespace-nowrap rounded-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-1 ${
                       isActive
-                        ? "text-[13px] font-medium text-foreground"
+                        ? "text-[13px] font-medium tracking-[0.02em] text-foreground"
                         : "text-[13px] font-normal text-muted-foreground/60 hover:text-muted-foreground"
                     }`}
                   >
+                    <span
+                      className={`h-[5px] w-[5px] rounded-full bg-primary transition-opacity duration-300 ${
+                        isActive ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
                     {section.label}
                   </button>
                 </div>

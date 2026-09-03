@@ -1,43 +1,29 @@
 import { ArrowRight } from "lucide-react"
-import { Label } from "@/components/ui/label"
+import { SectionEyebrow } from "./SectionEyebrow"
 import { ProjectCard } from "@/components/shared/ProjectCard"
 import type { Project } from "@/data/projects"
 
 function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
-    <section id="work" className="pb-16 md:pb-24">
-      <div className="py-12 sm:px-6 sm:py-16 md:px-6 md:py-16">
+    <section id="work" className="border-t border-border py-16 md:py-20">
+      <div className="reveal">
         <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
-          <Label className="animate-fade-in text-primary font-semibold">Featured Work</Label>
-          <h2
-            className="mt-4 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
-            style={{ animationDelay: "100ms" }}
-          >
+          <SectionEyebrow className="text-primary font-semibold">Featured Work</SectionEyebrow>
+          <h2 className="mt-4 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl">
             Production projects spanning full-stack & AI applications.
           </h2>
-          <p
-            className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground animate-fade-in-up sm:text-base"
-            style={{ animationDelay: "200ms" }}
-          >
+          <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
             Built using Next.js, React, TypeScript, Node.js, Better Auth, Prisma, PostgreSQL, and Python models.
           </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${300 + i * 100}ms` }}
-            />
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
 
-        <div
-          className="mt-12 flex justify-center animate-fade-in-up"
-          style={{ animationDelay: "600ms" }}
-        >
+        <div className="mt-12 flex justify-center">
           <a
             href="https://github.com/johaile"
             target="_blank"

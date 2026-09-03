@@ -1,30 +1,16 @@
-import { Mail, MapPin, Phone, Lightbulb } from "lucide-react"
-
-export interface ContactInfo {
-  icon: typeof Mail
-  label: string
-  value: string
-  href?: string
-}
-
-export const contactInfo: ContactInfo[] = [
-  { icon: Mail, label: "Email", value: "yohannes.h93@gmail.com", href: "mailto:yohannes.h93@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+251 9 35 35 55 87", href: "tel:+251935355587" },
-  { icon: MapPin, label: "Location", value: "Addis Ababa, Ethiopia" },
-  { icon: Lightbulb, label: "Current Focus", value: "Multi-brand Travel & AI Products" },
-]
-
-export interface SocialLink {
-  label: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-}
-
-export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/johaile", icon: GithubIcon },
-  { label: "LinkedIn", href: "https://linkedin.com/in/johnny-haile", icon: LinkedinIcon },
-  { label: "Email", href: "mailto:yohannes.h93@gmail.com", icon: MailIcon },
-]
+import {
+  Code2,
+  Server,
+  ShieldCheck,
+  Brain,
+  Database,
+  Users,
+  Mail,
+  MapPin,
+  Phone,
+  Lightbulb,
+  type LucideIcon,
+} from "lucide-react"
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -42,8 +28,30 @@ function LinkedinIcon({ className }: { className?: string }) {
   )
 }
 
-function MailIcon({ className }: { className?: string }) {
-  return (
-    <Mail className={className} />
-  )
+const iconMap: Record<string, LucideIcon | React.ComponentType<{ className?: string }>> = {
+  Code2,
+  Server,
+  ShieldCheck,
+  Brain,
+  Database,
+  Users,
+  Mail,
+  MapPin,
+  Phone,
+  Lightbulb,
+  Github: GithubIcon,
+  Linkedin: LinkedinIcon,
 }
+
+function DataIcon({
+  name,
+  className,
+}: {
+  name: string
+  className?: string
+}) {
+  const Icon = iconMap[name] ?? Code2
+  return <Icon className={className} />
+}
+
+export { DataIcon }

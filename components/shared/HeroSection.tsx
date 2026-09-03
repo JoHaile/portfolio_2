@@ -1,37 +1,37 @@
-import { ArrowRight, Download, Mail } from "lucide-react";
-import { Label } from "@/components/ui/label";
+import { ArrowRight, Mail } from "lucide-react";
+import { SectionEyebrow } from "./SectionEyebrow";
 import ProfileCard from "./ProfileCard";
 import type { ProfileData } from "@/data/profile";
 
 function HeroSection({ profile }: { profile: ProfileData }) {
   return (
-    <section id="hero" className="py-14 sm:py-18 md:py-22 lg:py-24">
+    <section id="hero" className="py-14 md:py-16 lg:py-20">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
-        <div className="flex flex-1 flex-col gap-4">
-          <Label
-            style={{ animationDelay: "100ms" }}
-            className="animate-fade-in text-primary font-semibold"
+        <div className="hero-reveal flex flex-1 flex-col gap-4">
+          <SectionEyebrow
+            style={{ "--t": "0ms" } as React.CSSProperties}
+            className="text-primary font-semibold"
           >
             {profile.role}
-          </Label>
+          </SectionEyebrow>
 
           <h1
-            className="text-2xl font-bold leading-[1.3] tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl lg:text-5xl animate-fade-in-up"
-            style={{ animationDelay: "200ms" }}
+            style={{ "--t": "90ms" } as React.CSSProperties}
+            className="text-2xl font-bold leading-[1.3] tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl lg:text-5xl"
           >
             Building production-ready web apps, booking systems, & AI solutions.
           </h1>
 
           <p
-            className="max-w-lg text-sm leading-relaxed text-muted-foreground animate-fade-in-up sm:text-base"
-            style={{ animationDelay: "300ms" }}
+            style={{ "--t": "180ms" } as React.CSSProperties}
+            className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base"
           >
             {profile.summary}
           </p>
 
           <div
-            className="flex flex-wrap items-center gap-3 animate-fade-in-up mt-6"
-            style={{ animationDelay: "400ms" }}
+            style={{ "--t": "270ms" } as React.CSSProperties}
+            className="flex flex-wrap items-center gap-3 mt-6"
           >
             <a
               href="#contact"
@@ -58,14 +58,18 @@ function HeroSection({ profile }: { profile: ProfileData }) {
         </div>
 
         <div
-          className="flex w-full flex-col gap-4 animate-fade-in-up md:flex-row lg:w-[380px] lg:flex-col lg:shrink-0"
-          style={{ animationDelay: "350ms" }}
+          className="hero-reveal flex w-full flex-col gap-4 md:flex-row lg:w-[380px] lg:flex-col lg:shrink-0"
         >
           {/* Profile card */}
-          <ProfileCard profile={profile} />
+          <div style={{ "--t": "150ms" } as React.CSSProperties}>
+            <ProfileCard profile={profile} />
+          </div>
 
           {/* Quick Highlights */}
-          <div className="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+          <div
+            style={{ "--t": "240ms" } as React.CSSProperties}
+            className="flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm"
+          >
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3">
               KEY HIGHLIGHTS
             </p>
@@ -90,7 +94,10 @@ function HeroSection({ profile }: { profile: ProfileData }) {
           </div>
 
           {/* Stats grid */}
-          <div className="grid flex-1 grid-cols-3 gap-2 rounded-2xl border border-border bg-card p-5 shadow-sm text-center">
+          <div
+            style={{ "--t": "330ms" } as React.CSSProperties}
+            className="grid flex-1 grid-cols-3 gap-2 rounded-2xl border border-border bg-card p-5 shadow-sm text-center"
+          >
             <div className="flex flex-col items-center gap-1">
               <span className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                 5
