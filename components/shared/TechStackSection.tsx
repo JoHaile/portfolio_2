@@ -1,28 +1,28 @@
-import { Label } from "@/components/ui/label"
+import { SectionEyebrow } from "./SectionEyebrow"
 import { cn } from "@/lib/utils"
 import type { StackCategory } from "@/data/techStack"
 
 function TechStackSection({ categories, className }: { categories: StackCategory[]; className?: string }) {
   return (
     <div className={cn("flex flex-1 flex-col", className)}>
-      <Label className="animate-fade-in">Stack</Label>
+      <div className="reveal">
+      <SectionEyebrow>Stack</SectionEyebrow>
 
-      <h2 className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl max-w-[70%] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+      <h2 className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl max-w-[70%]">
         A curated technical stack for building modern digital products.
       </h2>
 
-      <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+      <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
         Technologies grouped by responsibility, making the stack easy to
         understand instead of appearing as a keyword dump.
       </p>
 
       {/* Categories */}
       <div className="mt-10 flex flex-col gap-5">
-        {categories.map((cat, i) => (
+        {categories.map((cat) => (
           <div
             key={cat.name}
-            className="group rounded-[20px] border border-border bg-background p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-md animate-fade-in-up"
-            style={{ animationDelay: `${300 + i * 80}ms` }}
+            className="group rounded-[20px] border border-border bg-background p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-md"
           >
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold text-foreground">
@@ -47,6 +47,7 @@ function TechStackSection({ categories, className }: { categories: StackCategory
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   )

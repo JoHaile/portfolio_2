@@ -157,27 +157,105 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 
-  --animate-fade-in-up: fade-in-up 600ms ease-out both;
-  --animate-fade-in: fade-in 500ms ease-out both;
 }
 
-@keyframes fade-in-up {
+/* ---- Motion primitives ---- */
+
+/* Focal hero sequence: blur + rise, exponential ease-out. */
+@keyframes hero-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(26px);
+    filter: blur(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-@keyframes fade-in {
+.hero-reveal > * {
+  opacity: 0;
+  animation: hero-in 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--t, 0ms);
+}
+
+/* Calm scroll-driven reveal for below-fold section bodies. Content is
+   visible by default; unsupported browsers simply show it statically. */
+@keyframes reveal-up {
   from {
     opacity: 0;
+    transform: translateY(22px);
+    filter: blur(5px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 35%;
+}
+
+/* Respect reduced-motion: collapse motion to its resting, visible state. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal > *,
+  .reveal {
+    animation: none !important;
+  }
+  .hero-reveal > *,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* ---- Left scroll-tracker rail ---- */
+
+/* Active marker: static soft halo (ring + radial fill) behind the dot. */
+.dot-active {
+  position: relative;
+}
+.dot-active::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--primary) 28%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+/* Quiet breathing ring on the active marker — a persistent state, not an entrance. */
+@media (prefers-reduced-motion: no-preference) {
+  .dot-pulse::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+    animation: dot-breath 3s ease-in-out infinite;
+  }
+}
+
+@keyframes dot-breath {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0;
   }
 }
 

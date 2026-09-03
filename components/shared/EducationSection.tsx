@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label"
+import { SectionEyebrow } from "./SectionEyebrow"
 import { cn } from "@/lib/utils"
 import type { EducationEntry } from "@/data/education"
 
@@ -6,7 +6,7 @@ function EducationSection({ entries, className }: { entries: EducationEntry[]; c
   return (
     <div className={cn("flex flex-1 flex-col", className)}>
       <div className="flex h-full flex-col rounded-[32px] bg-primary p-8 sm:p-10">
-        <Label className="text-primary-foreground/60">Education</Label>
+        <SectionEyebrow className="text-primary-foreground/60">Education</SectionEyebrow>
 
         <h2 className="mt-6 text-2xl font-bold tracking-[-0.03em] text-primary-foreground sm:text-3xl md:text-4xl max-w-[70%]">
           Learning through formal education and real-world products.

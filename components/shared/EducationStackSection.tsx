@@ -31,7 +31,7 @@ function EducationStackSection({
 }) {
   return (
     <section id="education" className="border-t border-border py-16 md:py-20">
-      <div>
+      <div className="reveal">
         <div className="mb-10 max-w-3xl">
           <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
             Education & Technical Skills
