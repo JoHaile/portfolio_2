@@ -7,14 +7,14 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
   return (
     <section
       id="testimonials"
-      className="border-t border-border py-20 md:py-28"
+      className="border-t border-border py-16 md:py-20"
     >
       {/* Section header */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
           <Label className="animate-fade-in">Testimonials</Label>
           <h2
-            className="mt-5 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
+            className="mt-4 text-2xl font-bold tracking-[-0.03em] text-foreground sm:text-3xl md:text-4xl animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
             Words from people I&apos;ve worked with.
@@ -29,7 +29,7 @@ function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) 
       </div>
 
       {/* Testimonials grid */}
-      <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((testimonial, i) => (
           <TestimonialCard
             key={testimonial.authorName}

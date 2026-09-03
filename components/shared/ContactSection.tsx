@@ -6,7 +6,7 @@ import type { ContactInfo, SocialLink } from "@/data/contact"
 
 function ContactSection({ contactInfo, socialLinks }: { contactInfo: ContactInfo[]; socialLinks: SocialLink[] }) {
   return (
-    <section id="contact" className="border-t border-border py-16 md:py-24">
+    <section id="contact" className="border-t border-border py-16 md:py-20">
       {/* Section header */}
       <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
         <Label className="animate-fade-in text-primary font-semibold">Contact & Hiring</Label>

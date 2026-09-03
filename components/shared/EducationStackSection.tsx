@@ -30,7 +30,7 @@ function EducationStackSection({
   categories: StackCategory[]
 }) {
   return (
-    <section id="education" className="border-t border-border py-16 md:py-24">
+    <section id="education" className="border-t border-border py-16 md:py-20">
       <div>
         <div className="mb-10 max-w-3xl">
           <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">

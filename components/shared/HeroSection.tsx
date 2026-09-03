@@ -5,7 +5,7 @@ import type { ProfileData } from "@/data/profile";
 
 function HeroSection({ profile }: { profile: ProfileData }) {
   return (
-    <section id="hero" className="py-14 sm:py-18 md:py-22 lg:py-24">
+    <section id="hero" className="py-14 md:py-16 lg:py-20">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
         <div className="flex flex-1 flex-col gap-4">
           <Label

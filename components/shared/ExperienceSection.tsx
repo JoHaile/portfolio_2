@@ -4,7 +4,7 @@ import type { ExperienceEntry } from "@/data/experience"
 
 function ExperienceSection({ entries }: { entries: ExperienceEntry[] }) {
   return (
-    <section id="experience" className="border-t border-border py-16 md:py-24">
+    <section id="experience" className="border-t border-border py-16 md:py-20">
       <div className="max-w-full md:max-w-[70%] lg:max-w-[60%]">
         <Label className="animate-fade-in text-primary">Work Experience</Label>
         <h2
