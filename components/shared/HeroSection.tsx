@@ -1,4 +1,4 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Download } from "lucide-react";
 import { SectionEyebrow } from "./SectionEyebrow";
 import ProfileCard from "./ProfileCard";
 import type { ProfileData } from "@/data/profile";
@@ -48,11 +48,12 @@ function HeroSection({ profile }: { profile: ProfileData }) {
               <ArrowRight className="size-4 transition-all duration-300 group-hover/btn:translate-x-1" />
             </a>
             <a
-              href="#experience"
+              href="/Yohannes_Haile_Resume.pdf"
+              download="Yohannes_Haile_Resume.pdf"
               className="group/btn inline-flex cursor-pointer items-center gap-2 rounded-xl bg-muted px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted/80"
             >
-              Experience
-              <ArrowRight className="size-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+              Download Resume
+              <Download className="size-4 transition-transform duration-200 group-hover/btn:translate-y-0.5" />
             </a>
           </div>
         </div>

@@ -32,8 +32,9 @@ function ProjectCard({
   className,
   style,
 }: ProjectCardProps) {
-  const actualLiveUrl = liveUrl || "https://github.com/johaile"
-  const actualSourceUrl = sourceUrl || "https://github.com/johaile"
+  const hasLiveUrl = Boolean(liveUrl)
+  const hasSourceUrl = Boolean(sourceUrl)
+  const hasActions = hasLiveUrl || hasSourceUrl
 
   return (
     <article
@@ -91,26 +92,32 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-auto flex items-center gap-2 pt-4 border-t border-border/50">
-          <a
-            href={actualLiveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/btn flex-1 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-primary px-3.5 py-2.5 text-xs font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-sm"
-          >
-            View Live
-            <ExternalLink className="size-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-          </a>
-          <a
-            href={actualSourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/btn flex-1 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2.5 text-xs font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted hover:shadow-sm"
-          >
-            <GitBranch className="size-3.5 text-muted-foreground transition-colors group-hover/btn:text-foreground" />
-            Source Code
-          </a>
-        </div>
+        {hasActions && (
+          <div className="mt-auto flex items-center gap-2 pt-4 border-t border-border/50">
+            {hasLiveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/btn flex-1 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-primary px-3.5 py-2.5 text-xs font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-sm"
+              >
+                View Live
+                <ExternalLink className="size-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+              </a>
+            )}
+            {hasSourceUrl && (
+              <a
+                href={sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/btn flex-1 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2.5 text-xs font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted hover:shadow-sm"
+              >
+                <GitBranch className="size-3.5 text-muted-foreground transition-colors group-hover/btn:text-foreground" />
+                Source Code
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   )
